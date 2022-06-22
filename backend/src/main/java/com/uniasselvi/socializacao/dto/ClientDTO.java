@@ -10,6 +10,7 @@ import com.uniasselvi.socializacao.CadCli.entities.Genre;
 
 public class ClientDTO {
 
+	
 	private Long id;
 	@NotBlank(message = "Campo obrigatório")
 	private String name;
@@ -28,7 +29,7 @@ public class ClientDTO {
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.birthDate = birthDate;
+		this.birthDate =  birthDate;
 		this.genre = genre;
 		this.cpf = cpf;
 		this.salario = salario;
