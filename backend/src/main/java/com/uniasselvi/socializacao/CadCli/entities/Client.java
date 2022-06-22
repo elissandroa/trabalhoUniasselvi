@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
+import jdk.jfr.Timestamp;
+
 @Entity
 @Table(name = "tb_client")
 public class Client {
@@ -16,6 +18,7 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	@Timestamp
 	private Date birthDate;
 	private Genre genre;
 	private String cpf;

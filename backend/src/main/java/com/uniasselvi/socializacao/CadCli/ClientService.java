@@ -23,4 +23,18 @@ public class ClientService {
 			return list.stream().map(x -> new ClientDTO(x)).collect(Collectors.toList());
 		}
 	
+	@Transactional
+	public ClientDTO insert(ClientDTO dto) {
+		Client entity = new Client();
+		entity.setName(dto.getName());
+		entity.setBirthDate(dto.getBirthDate());
+		entity.setCpf(dto.getCpf());
+		entity.setGenre(dto.getGenre());
+		entity.setSalario(dto.getSalario());
+		entity.setTelefone(dto.getTelefone());
+		entity = repository.save(entity);
+		
+		return new ClientDTO(entity);
+  }
+	
 }
