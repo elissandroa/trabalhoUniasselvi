@@ -1,4 +1,4 @@
-package com.uniasselvi.socializacao.CadCli.services;
+package com.uniasselvi.socializacao.CadCli.services.exceptions;
 
 public class ResourceNotFoundException extends RuntimeException {
 	private static final long serialVersionUID = 1L;
