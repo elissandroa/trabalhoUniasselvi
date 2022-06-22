@@ -27,6 +27,7 @@ public class ClientService {
 	public ClientDTO insert(ClientDTO dto) {
 		Client entity = new Client();
 		entity.setName(dto.getName());
+		entity.setEmail(dto.getEmail());
 		entity.setBirthDate(dto.getBirthDate());
 		entity.setCpf(dto.getCpf());
 		entity.setGenre(dto.getGenre());

@@ -2,11 +2,13 @@ package com.uniasselvi.socializacao.CadCli.entities;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
 
 import jdk.jfr.Timestamp;
 
@@ -18,6 +20,9 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
+	@Email
+	@Column(unique = true)
+	private String email;
 	@Timestamp
 	private Date birthDate;
 	private Genre genre;
@@ -28,9 +33,10 @@ public class Client {
 	public Client() {
 	}
 
-	public Client(Long id, String name, Date birthDate, Genre genre, String cpf, Double salario, String telefone) {
+	public Client(Long id, String name, String email,  Date birthDate, Genre genre, String cpf, Double salario, String telefone) {
 		this.id = id;
 		this.name = name;
+		this.email = email;
 		this.birthDate = birthDate;
 		this.genre = genre;
 		this.cpf = cpf;
@@ -52,6 +58,14 @@ public class Client {
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
 	}
 
 	public Date getBirthDate() {
