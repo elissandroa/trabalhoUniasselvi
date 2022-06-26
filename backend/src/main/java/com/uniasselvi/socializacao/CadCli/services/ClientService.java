@@ -38,6 +38,8 @@ public class ClientService {
 		return new ClientDTO(entity);
 	}
 	
+	
+	
 		
 	@Transactional
 	public ClientDTO insert(ClientDTO dto) {
