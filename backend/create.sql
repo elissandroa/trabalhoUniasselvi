@@ -12,6 +12,4 @@
     );
 
     alter table if exists tb_client 
-       add constraint UK_tbu74oe5ntiego6pu36jfokha unique (email);
-
-    
+       add constraint UK_tbu74oe5ntiego6pu36jfokha unique (email);    
