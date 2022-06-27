@@ -1,7 +1,5 @@
 package com.uniasselvi.socializacao.dto;
 
-import java.util.Date;
-
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 
@@ -16,7 +14,6 @@ public class ClientDTO {
 	private String name;
 	@Email(message = "Favor entrar com email válido")
 	private String email;
-	private Date birthDate;
 	private Genre genre;
 	private String cpf;
 	private Double salario;
@@ -25,11 +22,10 @@ public class ClientDTO {
 	public ClientDTO() {
 	}
 
-	public ClientDTO(Long id, String name, String email, Date birthDate, Genre genre, String cpf, Double salario, String telefone) {
+	public ClientDTO(Long id, String name, String email, Genre genre, String cpf, Double salario, String telefone) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.birthDate =  birthDate;
 		this.genre = genre;
 		this.cpf = cpf;
 		this.salario = salario;
@@ -40,7 +36,6 @@ public class ClientDTO {
 		this.id = entity.getId();
 		this.name = entity.getName();
 		this.email = entity.getEmail();
-		this.birthDate = entity.getBirthDate();
 		this.genre = entity.getGenre();
 		this.cpf = entity.getCpf();
 		this.salario = entity.getSalario();
@@ -70,15 +65,6 @@ public class ClientDTO {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public Date getBirthDate() {
-		return birthDate;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
 	public Genre getGenre() {
 		return genre;
 	}

@@ -46,7 +46,6 @@ public class ClientService {
 		Client entity = new Client();
 		entity.setName(dto.getName());
 		entity.setEmail(dto.getEmail());
-		entity.setBirthDate(dto.getBirthDate());
 		entity.setCpf(dto.getCpf());
 		entity.setGenre(dto.getGenre());
 		entity.setSalario(dto.getSalario());
@@ -72,7 +71,6 @@ public class ClientService {
 	private void copyDtoToEntity(ClientDTO dto, Client entity) {
 		entity.setName(dto.getName());
 		entity.setEmail(dto.getEmail());
-		entity.setBirthDate(dto.getBirthDate());
 		entity.setCpf(dto.getCpf());
 		entity.setGenre(dto.getGenre());
 		entity.setSalario(dto.getSalario());

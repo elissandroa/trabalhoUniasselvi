@@ -1,16 +1,10 @@
 package com.uniasselvi.socializacao.CadCli.entities;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Email;
-
-import jdk.jfr.Timestamp;
 
 @Entity
 @Table(name = "tb_client")
@@ -20,11 +14,8 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	@Email
-	@Column(unique = true)
+	
 	private String email;
-	@Timestamp
-	private Date birthDate;
 	private Genre genre;
 	private String cpf;
 	private Double salario;
@@ -33,11 +24,10 @@ public class Client {
 	public Client() {
 	}
 
-	public Client(Long id, String name, String email,  Date birthDate, Genre genre, String cpf, Double salario, String telefone) {
+	public Client(Long id, String name, String email, Genre genre, String cpf, Double salario, String telefone) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.birthDate = birthDate;
 		this.genre = genre;
 		this.cpf = cpf;
 		this.salario = salario;
@@ -67,15 +57,6 @@ public class Client {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-
-	public Date getBirthDate() {
-		return birthDate;
-	}
-
-	public void setBirthDate(Date birthDate) {
-		this.birthDate = birthDate;
-	}
-
 	public Genre getGenre() {
 		return genre;
 	}
@@ -135,7 +116,7 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", name=" + name + ", birthDate=" + birthDate + ", genre=" + genre + ", cpf=" + cpf
+		return "Client [id=" + id + ", name=" + name + ", birthDate=" + ", genre=" + genre + ", cpf=" + cpf
 				+ ", salario=" + salario + ", telefone=" + telefone + "]";
 	}
 	
