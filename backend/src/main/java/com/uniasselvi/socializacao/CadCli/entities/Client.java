@@ -1,5 +1,6 @@
 package com.uniasselvi.socializacao.CadCli.entities;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -16,6 +17,7 @@ public class Client {
 	private String name;
 	private String email;
 	private String duvida;
+	@Column(columnDefinition = "text")
 	private String mensagem;
 		
 	public Client() {
