@@ -14,24 +14,19 @@ public class Client {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	private String name;
-	
 	private String email;
-	private Genre genre;
-	private String cpf;
-	private Double salario;
-	private String telefone;
-	
+	private String duvida;
+	private String mensagem;
+		
 	public Client() {
 	}
 
-	public Client(Long id, String name, String email, Genre genre, String cpf, Double salario, String telefone) {
+	public Client(Long id, String name, String email, String duvida, String mensagem) {
 		this.id = id;
 		this.name = name;
 		this.email = email;
-		this.genre = genre;
-		this.cpf = cpf;
-		this.salario = salario;
-		this.telefone = telefone;
+		this.duvida = duvida;
+		this.mensagem = mensagem;
 	}
 
 	public Long getId() {
@@ -57,36 +52,21 @@ public class Client {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public Genre getGenre() {
-		return genre;
+
+	public String getDuvida() {
+		return duvida;
 	}
 
-	public void setGenre(Genre genre) {
-		this.genre = genre;
+	public void setDuvida(String duvida) {
+		this.duvida = duvida;
 	}
 
-	public String getCpf() {
-		return cpf;
+	public String getMensagem() {
+		return mensagem;
 	}
 
-	public void setCpf(String cpf) {
-		this.cpf = cpf;
-	}
-
-	public Double getSalario() {
-		return salario;
-	}
-
-	public void setSalario(Double salario) {
-		this.salario = salario;
-	}
-
-	public String getTelefone() {
-		return telefone;
-	}
-
-	public void setTelefone(String telefone) {
-		this.telefone = telefone;
+	public void setMensagem(String mensagem) {
+		this.mensagem = mensagem;
 	}
 
 	@Override
@@ -116,8 +96,12 @@ public class Client {
 
 	@Override
 	public String toString() {
-		return "Client [id=" + id + ", name=" + name + ", birthDate=" + ", genre=" + genre + ", cpf=" + cpf
-				+ ", salario=" + salario + ", telefone=" + telefone + "]";
+		return "Client [id=" + id + ", name=" + name + ", email=" + email + ", duvida=" + duvida + ", mensagem="
+				+ mensagem + "]";
 	}
 	
+	
 }
+	
+
+	

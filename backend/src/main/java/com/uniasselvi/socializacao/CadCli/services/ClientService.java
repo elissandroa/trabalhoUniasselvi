@@ -46,10 +46,8 @@ public class ClientService {
 		Client entity = new Client();
 		entity.setName(dto.getName());
 		entity.setEmail(dto.getEmail());
-		entity.setCpf(dto.getCpf());
-		entity.setGenre(dto.getGenre());
-		entity.setSalario(dto.getSalario());
-		entity.setTelefone(dto.getTelefone());
+		entity.setDuvida(dto.getDuvida());
+		entity.setMensagem(dto.getMensagem());
 		entity = repository.save(entity);
 		
 		return new ClientDTO(entity);
@@ -71,10 +69,8 @@ public class ClientService {
 	private void copyDtoToEntity(ClientDTO dto, Client entity) {
 		entity.setName(dto.getName());
 		entity.setEmail(dto.getEmail());
-		entity.setCpf(dto.getCpf());
-		entity.setGenre(dto.getGenre());
-		entity.setSalario(dto.getSalario());
-		entity.setTelefone(dto.getTelefone());
+		entity.setDuvida(dto.getDuvida());
+		entity.setMensagem(dto.getMensagem());
 		entity = repository.save(entity);
 	}	
 	
